@@ -1,0 +1,51 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e ".[dev]"
+      - run: pytest -q
+      - name: The reconstruction must hold
+        # Exits non-zero if the rebuilt index drifts from the published one,
+        # so a broken foundation fails the build rather than printing a warning.
+        run: whoseinflation verify
+      - name: Show the finding
+        run: whoseinflation regimes
+      - name: Figures regenerate identically
+        run: |
+          python3 scripts/make_figures.py
+          git diff --exit-code -- docs/figures/ \
+            || (echo "committed figures do not match regenerated output" && exit 1)
+
+  packaged:
+    # A plain install, run from a directory with no checkout in it. Catches
+    # data files that only resolve relative to the repo.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install .
+      - run: mkdir -p /tmp/elsewhere
+      - working-directory: /tmp/elsewhere
+        run: |
+          whoseinflation verify
+          whoseinflation weights
+          whoseinflation households
+          whoseinflation regimes

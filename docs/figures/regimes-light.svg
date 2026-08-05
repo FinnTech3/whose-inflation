@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="298" viewBox="0 0 660 298" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" role="img" aria-label="Mean spread between household inflation rates, grouped by the level of headline inflation.">
+<rect width="660" height="298" fill="#fcfcfb"/>
+<text x="24" y="32" font-size="15" font-weight="600" fill="#0b0b0b">The headline describes people worst when it matters most</text>
+<text x="24" y="54" font-size="12" fill="#52514e">Average gap between the highest and lowest household, by headline inflation</text>
+<text x="176" y="112.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">headline below 3%</text>
+<rect x="190" y="97.0" width="101.8" height="22" rx="4" fill="#86b6ef" opacity="1.0"/>
+<rect x="190" y="97.0" width="4" height="22" fill="#86b6ef" opacity="1.0"/>
+<text x="301.8" y="112.0" font-size="12.5" font-weight="600" fill="#0b0b0b">0.78pp</text>
+<text x="301.8" y="127.0" font-size="10.5" fill="#898781">56 months</text>
+<text x="176" y="164.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">headline 3% to 5%</text>
+<rect x="190" y="149.0" width="125.3" height="22" rx="4" fill="#3987e5" opacity="1.0"/>
+<rect x="190" y="149.0" width="4" height="22" fill="#3987e5" opacity="1.0"/>
+<text x="325.3" y="164.0" font-size="12.5" font-weight="600" fill="#0b0b0b">0.96pp</text>
+<text x="325.3" y="179.0" font-size="10.5" fill="#898781">21 months</text>
+<text x="176" y="216.0" font-size="12.5" fill="#0b0b0b" text-anchor="end">headline 5% and above</text>
+<rect x="190" y="201.0" width="320.3" height="22" rx="4" fill="#1c5cab" opacity="1.0"/>
+<rect x="190" y="201.0" width="4" height="22" fill="#1c5cab" opacity="1.0"/>
+<text x="520.3" y="216.0" font-size="12.5" font-weight="600" fill="#0b0b0b">2.45pp</text>
+<text x="520.3" y="231.0" font-size="10.5" fill="#898781">24 months</text>
+<line x1="190" y1="72" x2="190" y2="238" stroke="#c3c2b7" stroke-width="2"/>
+<text x="24" y="274" font-size="12" fill="#52514e">In a shock the households disagree 3.1 times as much as they do at target.</text>
+</svg>
