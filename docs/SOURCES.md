@@ -9,7 +9,7 @@ US Bureau of Labor Statistics, Consumer Price Index for All Urban Consumers
 (CPI-U), US city average, **not seasonally adjusted**, monthly, 2017-01 to
 2026-06. Retrieved from the public API v1, which needs no registration key.
 
-Series used — the all-items index and the eight major groups:
+Series used: the all-items index and the eight major groups.
 
 | Series | Group |
 | --- | --- |
@@ -28,8 +28,8 @@ seasonal patterns cancel, and the unadjusted series is the one the relative
 importance weights are published against.
 
 The response is committed at `src/whoseinflation/data/`. The keyless API tier
-is rate-limited to a small number of requests per day — I hit the cap during
-development — so fetching at runtime would make results unreproducible and the
+is rate-limited to a small number of requests per day, I hit the cap during
+development, so fetching at runtime would make results unreproducible and the
 tool unusable on a bad day.
 
 ## Weights
@@ -41,14 +41,14 @@ check validates against.
 
 The four household baskets are **my own**, not official statistics. They are
 built by shifting group shares in the directions the BLS Consumer Expenditure
-Survey documents for each group — renters, older households, car-dependent
-households, students — and each carries a written rationale in the code. They
+Survey documents for each group, renters, older households, car-dependent
+households, students, and each carries a written rationale in the code. They
 are labelled as illustrative wherever they appear.
 
 ## Studied
 
-No code was copied. The method — decomposing a price index into weighted
-components and re-weighting for alternative populations — is standard index
+No code was copied. The method, decomposing a price index into weighted
+components and re-weighting for alternative populations, is standard index
 number theory. BLS's own experimental CPI-E for the elderly is the same idea
 applied officially, and was the prompt for asking what other populations would
 look like.

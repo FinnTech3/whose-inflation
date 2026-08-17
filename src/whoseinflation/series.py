@@ -7,7 +7,7 @@ why everything here works in ratios and never subtracts one index from another.
 
 Two things about the BLS feed worth knowing before trusting it:
 
-**Some values are the string ``"-"``.** Not null, not zero — a hyphen, sitting
+**Some values are the string ``"-"``.** Not null, not zero, a hyphen, sitting
 in a field the schema says is a number. Nine of them in the ten years loaded
 here. Coerce blindly and you crash; coerce with a bare ``float(v) or 0`` and
 you have silently inserted a zero index level, which reads as prices falling
@@ -75,8 +75,8 @@ class Series:
         """Change against the same month a year earlier.
 
         Same month, deliberately. Month-on-month comparisons of an unadjusted
-        index mostly measure the seasons — heating in January, airfares in
-        July — rather than inflation.
+        index mostly measure the seasons, heating in January, airfares in
+        July, rather than inflation.
         """
         now = self.levels.get(month)
         then = self.levels.get(month.a_year_earlier())

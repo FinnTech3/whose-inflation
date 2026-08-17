@@ -1,6 +1,6 @@
 """Tests for the CPI reconstruction and the basket comparison.
 
-All offline, against the BLS response committed inside the package — the same
+All offline, against the BLS response committed inside the package, the same
 file the CLI ships, so the suite exercises what a user actually gets.
 """
 
@@ -61,7 +61,7 @@ def test_reconstruction_is_worst_when_weights_moved_most(data):
     """The residual error has a cause, not just a size.
 
     One year's weights are used across a decade, so the rebuild drifts most
-    where real spending patterns shifted most — the pandemic and its
+    where real spending patterns shifted most, the pandemic and its
     aftermath. A worst month outside that window would mean the error is
     something else and worth chasing.
     """

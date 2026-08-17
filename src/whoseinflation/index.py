@@ -10,7 +10,7 @@ downstream is worth reading, and the honest move is to find out which before
 publishing a conclusion rather than after.
 
 It reproduces to a mean absolute error of about 0.08 percentage points across
-a decade — and where it drifts, it drifts for a reason worth explaining rather
+a decade, and where it drifts, it drifts for a reason worth explaining rather
 than hiding. See :func:`reconstruction_error`.
 
 **Then, change only the weights.** Same eight price series, same arithmetic,
@@ -44,7 +44,7 @@ def basket_inflation(
     approximation to a properly chained index, and a very close one over a
     twelve-month window because the weights barely move inside a year; over
     longer spans the two diverge and the chained calculation is the correct
-    one. The error this introduces is measured, not assumed — see
+    one. The error this introduces is measured, not assumed, see
     :func:`reconstruction_error`.
 
     Returns None if any group is missing either endpoint, rather than

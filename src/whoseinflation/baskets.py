@@ -12,8 +12,8 @@ doctor monthly, face the same prices and completely different inflation rates.
 Both are inside the average. Neither is described by it.
 
 The baskets below re-weight the same eight official indices. Nothing about the
-underlying price data changes — only the question of whose budget is being
-weighted. That is the point: the divergence is not a different measurement, it
+underlying price data changes; only the question of whose budget is being
+weighted. That is the point. The divergence is not a different measurement, it
 is the same measurement asked on behalf of somebody else.
 
 **These are illustrative, not official.** The official weights are sourced and
