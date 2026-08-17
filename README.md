@@ -14,7 +14,7 @@ Almost nobody has that budget. The average is real, carefully measured, and
 describes a composite household that does not exist.
 
 So the question I actually wanted answered was: how much does that matter? Not
-rhetorically — numerically. If I rebuild the index with a different basket, one
+rhetorically, numerically. If I rebuild the index with a different basket, one
 belonging to someone specific, how far does it move?
 
 To ask that honestly I first had to prove I could rebuild the official number
@@ -30,7 +30,7 @@ about.
 
 Take the eight published component indices, weight them by the published
 relative importances, and you recover the headline rate to a mean absolute
-error of **0.083 percentage points** across 101 months — against a figure BLS
+error of **0.083 percentage points** across 101 months, against a figure BLS
 itself publishes to one decimal place.
 
 ```
@@ -86,7 +86,7 @@ living **7.5%**.
 So the number is least representative at the exact moment people most need it
 to mean something. In calm times one figure describes nearly everyone well
 enough that the distinction is academic. In a shock it describes nobody, and it
-is precisely then that it is quoted hardest — in pay negotiations, in benefit
+is precisely then that it is quoted hardest, in pay negotiations, in benefit
 uprating, in central bank press conferences.
 
 That also explains a thing people say during inflationary episodes, which is
@@ -110,7 +110,7 @@ whoseinflation regimes      # the finding
 ```
 
 Ten years of BLS data ship inside the package, so everything runs offline and
-the numbers above reproduce exactly. That is deliberate — see below.
+the numbers above reproduce exactly. That is deliberate: see below.
 
 ## How it works
 
@@ -123,7 +123,7 @@ Doing it that way would have meant publishing a number with no way of knowing
 whether the machinery producing it was sound. The reconstruction check is
 cheap, it is decisive, and it either passes or the project has no foundation.
 There is a test asserting it holds, and a second test that feeds it
-deliberately wrong weights to confirm the check can actually fail — a
+deliberately wrong weights to confirm the check can actually fail. A
 verification that passes everything verifies nothing.
 
 ### The weights are the argument, so they are readable
@@ -141,7 +141,7 @@ obvious place and re-running takes a second.
 ### Year-on-year, never month-on-month
 
 The published index is not seasonally adjusted, so comparing consecutive months
-mostly measures the seasons — heating in January, airfares in July — rather
+mostly measures the seasons, heating in January, airfares in July, rather
 than inflation. Every comparison here is against the same month a year earlier.
 
 ### The data is committed, not fetched
@@ -153,7 +153,7 @@ inside the package and the analysis never touches the network.
 
 ## Two things in the data that would have gone unnoticed
 
-**Some values are the string `"-"`.** Not null, not zero — a hyphen sitting in
+**Some values are the string `"-"`.** Not null, not zero, a hyphen sitting in
 a field the schema calls numeric. Nine of them in the ten years loaded here.
 Coerce blindly and it crashes; coerce with a forgiving `float(v) or 0` and you
 have inserted a zero index level, which reads as prices falling 100% and then
@@ -163,7 +163,7 @@ might well be mistaken for a real event.
 **Annual averages arrive tagged `M13`.** They sit in the same array as monthly
 observations and look exactly like data. Treat them as a thirteenth month and
 every year gets counted an extra time, with a value that is by construction the
-average of the other twelve — so nothing looks obviously wrong, the series just
+average of the other twelve, so nothing looks obviously wrong. The series just
 becomes quietly wrong.
 
 Both are handled, and both are counted rather than silently dropped, so
@@ -173,7 +173,7 @@ Both are handled, and both are counted rather than silently dropped, so
 
 **One year's weights across a decade.** BLS re-estimates relative importances
 annually; I apply the December 2023 set throughout. This is the largest
-simplification here and it is measurable rather than hypothetical — it is most
+simplification here and it is measurable rather than hypothetical. It is most
 of the 0.083pp reconstruction error, and it is why the error peaks in 2021.
 Using period-correct weights would tighten the rebuild and complicate the
 household comparison, since the household baskets would then need to move too.
@@ -184,8 +184,8 @@ longer spans they diverge and the chained calculation is the correct one. The
 size of the approximation is exactly what `verify` measures.
 
 **Eight major groups, not the full detail.** The CPI decomposes far further
-than eight categories. Gaps concentrate in specific items — petrol rather than
-"transportation" — and going deeper would sharpen the commuter result
+than eight categories. Gaps concentrate in specific items, petrol rather than
+"transportation", and going deeper would sharpen the commuter result
 considerably. Eight is where the published relative importance table lives,
 which makes it the level at which the reconstruction can be verified.
 

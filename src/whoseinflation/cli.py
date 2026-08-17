@@ -60,7 +60,7 @@ def cmd_verify(args) -> int:
         f"\nThe worst month is {error.worst_month}, and the reason is worth "
         f"knowing: this\nuses one year's weights across a decade. Real weights "
         f"are re-estimated\nannually, and they moved most when spending "
-        f"patterns did — which is exactly\nwhen the error peaks."
+        f"patterns did, which is exactly\nwhen the error peaks."
     )
     return 0
 
@@ -107,7 +107,7 @@ def cmd_households(args) -> int:
         "\nOver a decade the averages are small, which is the first honest "
         "thing to\nsay about this: most of the time the headline is a "
         "reasonable summary of\nmost people. The interesting part is that "
-        "this stops being true exactly\nwhen it matters — see `regimes`."
+        "this stops being true exactly\nwhen it matters, see `regimes`."
     )
     return 0
 
